@@ -1,7 +1,11 @@
+import { ImagePicker } from './components/image-picker'
+
 function App () {
   return (
     <>
-      <h1 className='text-xl'>Hello!</h1>
+      <main className='h-full grid place-content-center'>
+        <ImagePicker />
+      </main>
     </>
   )
 }
