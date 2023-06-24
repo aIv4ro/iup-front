@@ -53,10 +53,6 @@ export function ImageUploader () {
     evt.stopPropagation()
     setDragging(false)
   }
-  /*
-  <div>
-                       </div>
-  */
 
   return (
     <div className='bg-gray-900 font-semibold py-10 px-20 rounded-md flex flex-col items-center justify-center gap-3'>
