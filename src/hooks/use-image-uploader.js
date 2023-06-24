@@ -1,9 +1,9 @@
 import { useRef, useState } from 'react'
+import { toast } from 'react-hot-toast'
 
 const url = 'https://api.cloudinary.com/v1_1/demo/image/upload'
 
 export function useImageUploader () {
-  const [dragging, setDragging] = useState(false)
   const ref = useRef(null)
   const [uploading, setUploading] = useState(false)
   const [imageUrl, setImageUrl] = useState(null)
@@ -18,13 +18,14 @@ export function useImageUploader () {
       .then(res => {
         const { url } = res
         setImageUrl(url)
+        toast.success('Image uploaded successfully')
       })
-      .catch(err => {
-        console.error(err)
+      .catch(() => {
+        toast.error('Unexpected error occoured uploading your image')
       }).finally(() => {
         setUploading(false)
       })
   }
 
-  return { ref, dragging, setDragging, upload, uploading, imageUrl }
+  return { ref, upload, uploading, imageUrl }
 }
