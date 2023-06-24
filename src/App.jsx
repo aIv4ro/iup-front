@@ -1,10 +1,10 @@
-import { ImagePicker } from './components/image-picker'
+import { ImageUploader } from './components/image-uploader'
 
 function App () {
   return (
     <>
       <main className='h-full grid place-content-center'>
-        <ImagePicker />
+        <ImageUploader />
       </main>
     </>
   )
